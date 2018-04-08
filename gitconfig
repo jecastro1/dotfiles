@@ -1,0 +1,15 @@
+[user]
+    email = example@mail.com
+    name = John Doe
+    signingkey = SETUP IF YOU USE A GPG KEY
+[core]
+    editor = vim
+    excludesfile = ~/.gitignore
+    ignorecase = false
+[color]
+    ui = 1
+    diff = true
+[log]
+    decorate = full
+[commit]
+    gpgsign = true
