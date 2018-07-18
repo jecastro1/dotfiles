@@ -1,7 +1,7 @@
 [user]
-    email = example@mail.com
-    name = John Doe
-    signingkey = SETUP IF YOU USE A GPG KEY
+   email = jecastro.ie@gmail.com
+    name = Jaime Castro
+    signingkey = 76A879C6C6E2769E39F60A59901A963AD4DE7567
 [core]
     editor = vim
     excludesfile = ~/.gitignore

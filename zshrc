@@ -18,3 +18,7 @@ alias pdfmerge="/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Re
 
 # Perl environment
 eval "$(perl -I$HOME/.perl5/lib/perl5 -Mlocal::lib=$HOME/.perl5)"
+
+# PyEnv
+# Python module is slow doing this
+pyenv virtualenvwrapper_lazy
