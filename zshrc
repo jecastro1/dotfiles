@@ -1,51 +1,39 @@
-source "$HOME/.zplugin/bin/zplugin.zsh"
+# Evaluate moving them another place
+export DOTFILES="$HOME/.dotfiles"
+export ZSH_PLUGINS="$DOTFILES/zsh-plugins"
+export ZSH_FUNCTIONS="$DOTFILES/zfunctions"
 
-# GPG
-zplugin ice wait"0" lucid
-zplugin light axtl/gpg-agent.zsh
+fpath=($ZSH_FUNCTIONS $fpath)
 
 # Perl
 # eval "$(perl -I$HOME/.perl5/lib/perl5 -Mlocal::lib=$HOME/.perl5)"
 export PERL_MB_OPT="--install_base \"/Users/jaimecastro/.perl5\"";
 export PERL_MM_OPT="INSTALL_BASE=/Users/jaimecastro/.perl5";
 
-# Python
-eval "$(pyenv init -)"
-
 # Pipsi
-export PATH="/Users/jaimecastro/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
+# From here, I'm certain that these have to be here
 
 # Colorize ls
 export CLICOLOR=1
 
 # Colorize man pages
-zplugin ice wait"0" lucid
-zplugin light ael-code/zsh-colored-man-pages
+source "$ZSH_PLUGINS/zsh-colored-man-pages/colored-man-pages.plugin.zsh"
 
 # History base config
-zplugin snippet 'https://github.com/sorin-ionescu/prezto/blob/master/modules/history/init.zsh'
+source "$ZSH_PLUGINS/prezto-history/init.zsh"
 
-# History search multiword
-zplugin ice wait"0" lucid
-zplugin light zdharma/history-search-multi-word
+# Completions
+source "$ZSH_PLUGINS/zsh-completions/zsh-completions.plugin.zsh"
+autoload -U compinit; compinit
 
 # Theme
-zplugin ice pick"async.zsh" src"pure.zsh"
-zplugin light sindresorhus/pure
+autoload -U promptinit; promptinit
+prompt pure
 
-# Completions options
-## Add menu style for completions
-zstyle ':completion:*' menu select
+# Syntax highlighting
+source "$ZSH_PLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
 
-# Some completions
-zplugin ice wait"0" blockf lucid
-zplugin light zsh-users/zsh-completions
-
-# Syntax highlighting (should be as late as possible)
-zplugin ice wait"0" atinit"zpcompinit; zpcdreplay" lucid
-zplugin light zdharma/fast-syntax-highlighting
-
-# History substring search (should be after syntax highlighting)
-zplugin ice wait"!1" lucid
-zplugin light zsh-users/zsh-history-substring-search
-
+# History substring search
+source "$ZSH_PLUGINS/zsh-history-substring-search/zsh-history-substring-search.zsh"
