@@ -27,8 +27,8 @@ zplugin ice wait"0" blockf lucid
 zplugin light zsh-users/zsh-completions
 
 # Autosuggestions
-zplugin ice wait"0" atload"_zsh_autosuggest_start" lucid
-zplugin light zsh-users/zsh-autosuggestions
+# zplugin ice wait"0" atload"_zsh_autosuggest_start" lucid
+# zplugin light zsh-users/zsh-autosuggestions
 
 # Syntax highlighting
 zplugin ice wait"0" atinit"zpcompinit; zpcdreplay" lucid
