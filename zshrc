@@ -1,24 +1,42 @@
-#
-# Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
 
-# Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
+# Completions
+zplug zsh-users/zsh-completions
 
-# Customize to your needs...
+# Syntax highlighting
+zplug zsh-users/zsh-syntax-highlighting
 
-# Global Aliases
+# History substring search
+zplug "zsh-users/zsh-history-substring-search"
 
-alias pdfmerge="/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py"
+# Colorize man pages
+zplug ael-code/zsh-colored-man-pages
 
-# Perl environment
+# Colorize ls
+export CLICOLOR=1
+
+# Colorize diff
+alias diff="colordiff"
+
+# Brew
+zplug vasyharan/zsh-brew-services
+
+# GPG
+zplug axtl/gpg-agent.zsh
+
+# Perl
 eval "$(perl -I$HOME/.perl5/lib/perl5 -Mlocal::lib=$HOME/.perl5)"
 
-# PyEnv
-# Python module is slow doing this
-pyenv virtualenvwrapper_lazy
+# Python
+eval "$(pyenv init -)"
+# Pipsi
+export PATH="/Users/jaimecastro/.local/bin:$PATH"
+
+# Theme
+zplug mafredri/zsh-async, from:github
+zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
+
+# Load everything
+zplug load
+
