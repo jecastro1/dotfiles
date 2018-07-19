@@ -1,19 +1,6 @@
-# Evaluate moving them another place
-export DOTFILES="$HOME/.dotfiles"
-export ZSH_PLUGINS="$DOTFILES/zsh-plugins"
-export ZSH_FUNCTIONS="$DOTFILES/zfunctions"
-
 fpath=($ZSH_FUNCTIONS $fpath)
 
-# Perl
-# eval "$(perl -I$HOME/.perl5/lib/perl5 -Mlocal::lib=$HOME/.perl5)"
-export PERL_MB_OPT="--install_base \"/Users/jaimecastro/.perl5\"";
-export PERL_MM_OPT="INSTALL_BASE=/Users/jaimecastro/.perl5";
-
-# Pipsi
-export PATH="$HOME/.local/bin:$PATH"
-
-# From here, I'm certain that these have to be here
+## Customizations ###
 
 # Colorize ls
 export CLICOLOR=1
@@ -25,8 +12,15 @@ source "$ZSH_PLUGINS/zsh-colored-man-pages/colored-man-pages.plugin.zsh"
 source "$ZSH_PLUGINS/prezto-history/init.zsh"
 
 # Completions
+zstyle ':completion:*' menu select
 source "$ZSH_PLUGINS/zsh-completions/zsh-completions.plugin.zsh"
-autoload -U compinit; compinit
+autoload -U compinit
+typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
+if [ $(date +'%j') != $updated_at ]; then
+  compinit -i
+else
+  compinit -C -i
+fi
 
 # Theme
 autoload -U promptinit; promptinit
@@ -37,3 +31,9 @@ source "$ZSH_PLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
 
 # History substring search
 source "$ZSH_PLUGINS/zsh-history-substring-search/zsh-history-substring-search.zsh"
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+bindkey -M emacs '^P' history-substring-search-up
+bindkey -M emacs '^N' history-substring-search-down
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
