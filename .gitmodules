@@ -13,3 +13,12 @@
 [submodule "zsh-plugins/zsh-history-substring-search"]
 	path = zsh-plugins/zsh-history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search
+[submodule "zsh-plugins/ssh"]
+	path = zsh-plugins/ssh
+	url = git@github.com:zpm-zsh/ssh.git
+[submodule "zsh-plugins/gpg-agent.zsh"]
+	path = zsh-plugins/gpg-agent.zsh
+	url = git@github.com:axtl/gpg-agent.zsh.git
+[submodule "zsh-plugins/k"]
+	path = zsh-plugins/k
+	url = git@github.com:supercrabtree/k.git
