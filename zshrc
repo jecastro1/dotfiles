@@ -8,6 +8,10 @@ export CLICOLOR=1
 # Colorize man pages
 source "$ZSH_PLUGINS/zsh-colored-man-pages/colored-man-pages.plugin.zsh"
 
+# Colorize less (requires pygments)
+export LESS='-R'
+export LESSOPEN='|pygmentize -g %s'
+
 # Colorize diff
 alias diff="colordiff"
 
