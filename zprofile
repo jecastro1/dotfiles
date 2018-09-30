@@ -12,4 +12,4 @@ export PERL_MM_OPT="INSTALL_BASE=/Users/jaimecastro/.perl5"
 
 # Python
 eval "$(pyenv init - --no-rehash zsh)"
-
+export PIPENV_MAX_DEPTH=5
