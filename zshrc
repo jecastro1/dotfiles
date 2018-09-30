@@ -24,8 +24,8 @@ k() {
   k
 }
 
-# GPG-agent
-# source "$ZSH_PLUGINS/gpg-agent.zsh/gpg-agent.plugin.zsh"
+# Case insensitive completions
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 # Completions
 zstyle ':completion:*' menu select
