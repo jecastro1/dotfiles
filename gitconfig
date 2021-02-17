@@ -1,7 +1,7 @@
 [user]
-   email = jecastro.ie@gmail.com
+    email = jecastro.ie@gmail.com
     name = Jaime Castro
-    signingkey = 76A879C6C6E2769E39F60A59901A963AD4DE7567
+    signingkey = 50601E22
 [core]
     editor = vim
     excludesfile = ~/.gitignore
@@ -13,3 +13,6 @@
     decorate = full
 [commit]
     gpgsign = true
+[gpg]
+    program = /usr/local/bin/gpg
+
