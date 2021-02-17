@@ -1,8 +1,6 @@
 fpath=($ZSH_FUNCTIONS $fpath)
 
 ## Customizations ###
-export GPG_TTY=`tty`
-
 # Colorize ls
 export CLICOLOR=1
 

@@ -10,6 +10,9 @@ export PERL_LOCAL_LIB_ROOT="/Users/jaimecastro/.perl5${PERL_LOCAL_LIB_ROOT:+:${P
 export PERL_MB_OPT="--install_base \"/Users/jaimecastro/.perl5\""
 export PERL_MM_OPT="INSTALL_BASE=/Users/jaimecastro/.perl5"
 
+# GPG
+export GPG_TTY=`tty`
+
 # Python
-eval "$(pyenv init - --no-rehash zsh)"
-export PIPENV_MAX_DEPTH=5
+# eval "$(pyenv init - --no-rehash zsh)"
+# export PIPENV_MAX_DEPTH=5
