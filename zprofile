@@ -13,6 +13,11 @@ export PERL_MM_OPT="INSTALL_BASE=/Users/jaimecastro/.perl5"
 # GPG
 export GPG_TTY=`tty`
 
-# Python
-# eval "$(pyenv init - --no-rehash zsh)"
-# export PIPENV_MAX_DEPTH=5
+# Compilers for numpy (brew install numpy --only-dependencies), then use pipenv as needed
+export LDFLAGS="-L/usr/local/opt/openblas/lib"
+export CPPFLAGS="-I/usr/local/opt/openblas/include"
+export PKG_CONFIG_PATH="/usr/local/opt/openblas/lib/pkgconfig"
+# Workaround for numpy failing to install
+# https://github.com/pypa/pipenv/issues/4564#issuecomment-756625303
+export SYSTEM_VERSION_COMPAT=1
+

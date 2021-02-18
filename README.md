@@ -16,3 +16,5 @@ NO GUARANTEES. I'm very messy sometimes.
 - `vim`
 - `zsh`
 
+## Recommended
+- `pipenv` (via `brew`)
