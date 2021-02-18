@@ -1,7 +1,7 @@
 [user]
     email = jecastro.ie@gmail.com
     name = Jaime Castro
-    signingkey = 50601E22
+    signingkey = F4937077
 [core]
     editor = vim
     excludesfile = ~/.gitignore
