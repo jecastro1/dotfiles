@@ -11,3 +11,7 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 # Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
+# Enable tap to click
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+
+echo "Restart might be needed to apply these changes"
